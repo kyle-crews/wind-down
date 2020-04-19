@@ -9,8 +9,8 @@ To utilize the application:
 
 PROJECT STACK:
 ------------------------------
-Frontend: HTML/CSS
-Backend: Ruby
-Backend Web Framework: Sinatra
-DB: SQLite
-DB Backend: ActiveRecord
+- Frontend: HTML/CSS
+- Backend: Ruby
+- Backend Web Framework: Sinatra
+- DB: SQLite
+- DB Backend: ActiveRecord
