@@ -5,7 +5,7 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use Rack::MethodOverride
-### use OtherController1
-### use OtherController2
-### use OtherController3
+use UsersController
+use TasksController
+use NotesController
 run ApplicationController
