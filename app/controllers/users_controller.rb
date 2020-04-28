@@ -20,13 +20,13 @@ class UsersController < ApplicationController
     else
       @user = User.create(username:params[:username], email:params[:email], password:params[:password])
       session[:user_id] = @user.id
-      flash[:message] = "It's time to add expenses"
+      flash[:message] = "It's time to add tasks"
       redirect_to_home_page
     end
   end
 
   # loads the login page
-  # loads expenses page after login
+  # loads tasks page after login
   # does not let user view login page if already logged in
   get '/login' do
     if logged_in?
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # loads expenses if username exists and password is authenticated
+  # loads tasks if username exists and password is authenticated
   post '/login' do
     @user = User.find_by(username:params[:username])
     if @user && @user.authenticate(params[:password])
