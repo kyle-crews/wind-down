@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_20_065021) do
 
-  create_table "notes", force: :cascade do |t|
+  create_table "logs", force: :cascade do |t|
     t.string "entry"
     t.integer "user_id"
   end
