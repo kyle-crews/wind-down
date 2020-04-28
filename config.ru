@@ -7,5 +7,5 @@ end
 use Rack::MethodOverride
 use UsersController
 use TasksController
-use EntryController
+use LogsController
 run ApplicationController
