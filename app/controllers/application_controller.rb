@@ -36,8 +36,11 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_to_home_page
-      redirect to "/logs"
+      redirect to "/tasks"
     end
+
+    def redirect_to_logs
+      redirect to "/logs"
   end
 
 end
