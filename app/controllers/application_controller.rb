@@ -41,6 +41,6 @@ class ApplicationController < Sinatra::Base
 
     def redirect_to_logs
       redirect to "/logs"
+    end
   end
-
 end

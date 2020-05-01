@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_04_20_065021) do
 
   create_table "logs", force: :cascade do |t|
-    t.string "entry"
+    t.string "log_date"
     t.integer "user_id"
   end
 

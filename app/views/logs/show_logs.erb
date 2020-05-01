@@ -1,4 +1,5 @@
-<h1 style="color: white; margin: 30px 10px;">Hi, <%= current_user.username.capitalize %> your total tasks are <%= current_user.total_amount %></h1>
+<h1 style="color: white; margin: 30px 10px;"><%= @log.entry %> tasks are $<%= @log.tasks.collect {|e| e.amount}.sum %></h1>
+
 <div class="container" >
   <div class="row">
     <div class="jumbotron" style="background: white; border-radius:20px;">
@@ -11,17 +12,15 @@
       <table class="table table-hover table-striped" >
       <tr class="info">
         <th><h3>Description</h3></th>
-        <th><h3>Entry</h3></th>
+        <th><h3>Amount</h3></th>
         <th><h3>Date</h3></th>
-        <th><h3>Log</h3></th>
         <th><h3></h3></th>
       </tr>
-        <% current_user.tasks_sort_by_date.each do |task| %>
+        <% @log.tasks_sort_by_date.each do |task| %>
           <tr style="text-align:left;">
-            <td><a href="tasks/<%= task.id %>"><%= task.description %></a></td>
-            <td>$ <%= task.entry %></td>
+            <td><%= task.description %></td>
+            <td>$ <%= task.amount %></td>
             <td><%= task.date %></td>
-            <td><a href="logs/<%= task.log.id %>"><%= task.log.name %></a></td>
             <td><a href="tasks/<%= task.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
           </tr>
         <% end %>
