@@ -18,5 +18,6 @@ PROJECT STACK:
 - DB: SQLite
 - DB Backend: ActiveRecord
 
-
+CREDIT:
+------------------------------
 HTML/CSS theme/layout adapted from: https://github.com/aprietof/Expensy
