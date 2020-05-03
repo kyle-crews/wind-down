@@ -17,3 +17,6 @@ PROJECT STACK:
 - Backend Web Framework: Sinatra
 - DB: SQLite
 - DB Backend: ActiveRecord
+
+
+HTML/CSS theme/layout adapted from: https://github.com/aprietof/Expensy
