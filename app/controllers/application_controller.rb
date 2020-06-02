@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "password_security"
   end
-  
+
   get '/' do
     if !logged_in?
       erb :index, :layout => :'not_logged_in_layout' #=> Log In Page
@@ -36,11 +36,13 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_to_home_page
-      redirect to "/tasks"
+      redirect to "/expenses"
     end
 
-    def redirect_to_logs
-      redirect to "/logs"
+    def redirect_to_categories
+      redirect to "/categories"
     end
+
   end
+
 end

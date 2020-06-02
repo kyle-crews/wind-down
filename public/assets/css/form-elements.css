@@ -6,7 +6,7 @@
 }
 
 
-select[name="log_date"],
+select[name="category_name"],
 input[type="text"],
 input[type="password"],
 input[type="email"],

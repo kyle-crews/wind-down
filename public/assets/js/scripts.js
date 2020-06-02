@@ -53,15 +53,15 @@ jQuery(document).ready(function() {
 
 
 /*
-    Create a new log onchange
+    Create a new category onchange
 */
 
 function yesnoCheck(that) {
-		if (that.value == "new log") {
+		if (that.value == "new category") {
 				document.getElementById("ifYes").style.display = "block";
-				document.getElementById("create log").name = "log_date";
+				document.getElementById("create category").name = "category_name";
 		} else {
 				document.getElementById("ifYes").style.display = "none";
-				document.getElementById("create log").name = "no_name";
+				document.getElementById("create category").name = "no_name";
 		}
 }

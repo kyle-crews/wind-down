@@ -1,4 +1,4 @@
-<h1 style="color: white; margin: 30px 10px;"><%= @log.entry %> tasks are $<%= @log.tasks.collect {|e| e.amount}.sum %></h1>
+<h1 style="color: white; margin: 30px 10px;">Hi, <%= current_user.username.capitalize %>. <%= Time.now.strftime("Tomorrow is %A") %> <br> // Realistically, set aside <strong><%= current_user.total_amount %> hours</strong> for real work //</h1>
 
 <div class="container" >
   <div class="row">
@@ -14,14 +14,16 @@
         <th><h3>Description</h3></th>
         <th><h3>Amount</h3></th>
         <th><h3>Date</h3></th>
+        <th><h3>Category</h3></th>
         <th><h3></h3></th>
       </tr>
-        <% @log.tasks_sort_by_date.each do |task| %>
+        <% current_user.expenses_sort_by_date.each do |expense| %>
           <tr style="text-align:left;">
-            <td><%= task.description %></td>
-            <td>$ <%= task.amount %></td>
-            <td><%= task.date %></td>
-            <td><a href="tasks/<%= task.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href="expenses/<%= expense.id %>"><%= expense.description %></a></td>
+            <td>$ <%= expense.amount %></td>
+            <td><%= expense.date %></td>
+            <td><a href="categories/<%= expense.category.id %>"><%= expense.category.name %></a></td>
+            <td><a href="expenses/<%= expense.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
           </tr>
         <% end %>
       </table>

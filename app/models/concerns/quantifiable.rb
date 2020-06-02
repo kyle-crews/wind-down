@@ -1,14 +1,14 @@
 class Quantifiable
 
-    module InstanceMethods
-  
-      def total_amount
-        self.tasks.collect {|task| task.amount}.sum
-      end
-  
-      def tasks_sort_by_date
-        self.tasks.sort_by {|task| task[:date]}.reverse
-      end
+  module InstanceMethods
+
+    def total_amount
+      self.expenses.collect {|expense| expense.amount}.sum
     end
-  
+
+    def expenses_sort_by_date
+      self.expenses.sort_by {|expense| expense[:date]}.reverse
+    end
+  end
+
 end

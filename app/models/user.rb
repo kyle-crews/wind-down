@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
-    include Quantifiable::InstanceMethods
 
-    has_many :tasks
-    has_many :logs
-    has_secure_password
+  include Quantifiable::InstanceMethods
 
-    def logs_sort_by_entry
-        self.logs.all.sort_by {|log| log[:entry]}
-    end
+  has_secure_password
+
+  has_many :categories, :dependent => :destroy
+  has_many :expenses
+
+  def categories_sort_by_name
+    self.categories.all.sort_by {|category| category[:name]}
+  end
+
 end

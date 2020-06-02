@@ -7,7 +7,7 @@
                 <div class="form-box">
                     <div class="form-top">
                       <div class="form-top-left">
-                        <h3>Enter a New Task</h3>
+                        <h3>Enter a New Expense</h3>
                         <% if flash.has?(:message) %>
                           <p style="color:#f0ad4e;"><%= flash[:message] %> </p>
                         <% end %>
@@ -18,7 +18,7 @@
                     </div>
 
                   <div class="form-bottom">
-                    <form  action="/tasks" method="post" >
+                    <form  action="/expenses" method="post" >
 
                       <div class="form-group">
                         <label class="sr-only" for="form-description">Description</label>
@@ -36,22 +36,22 @@
                       </div>
 
                       <div class="form-group">
-                        <label  style="color: white; -webkit-font-smoothing: antialiased !important;" for="log">Log</label>
-                        <select name="log_entry" onchange="yesnoCheck(this);">
-                              <% current_user.logs_sort_by_entry.each do |log| %>
-                                <option  name="log_entry"><%= log.entry %></option>
+                        <label  style="color: white; -webkit-font-smoothing: antialiased !important;" for="category">Category</label>
+                        <select name="category_name" onchange="yesnoCheck(this);">
+                              <% current_user.categories_sort_by_name.each do |category| %>
+                                <option  name="category_name"><%= category.name %></option>
                               <%end%>
-                              <option value="new log">Create Log</option>
+                              <option value="new category">Create Category</option>
                         </select>
                       </div>
 
                       <div class="form-group" id="ifYes" style="display: none;">
-                        <label class="sr-only" for="log">Add New Log</label>
-                        <input type="text" id="create log" placeholder="Add log here..." name="no_entry"/>
+                        <label class="sr-only" for="category">Add New Category</label>
+                        <input type="text" id="create category" placeholder="Add category here..." name="no_name"/>
                       </div>
 
 
-                        <button type="submit" class="btn btn-success">Create Task</button>
+                        <button type="submit" class="btn btn-success">Create Expense</button>
                     </form>
 
                   </div>
