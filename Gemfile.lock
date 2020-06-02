@@ -41,7 +41,7 @@ GEM
       actionpack (>= 1.4.0)
       activerecord (>= 1.6.0)
       rake (>= 0.4.15)
-    rake (11.2.2)
+    rake (12.3.3)
     require_all (1.3.3)
     ripl (0.7.1)
       bond (~> 0.5.1)
