@@ -7,5 +7,5 @@ end
 use Rack::MethodOverride
 use UsersController
 use DaysController
-use ExpensesController
+use LogsController
 run ApplicationController

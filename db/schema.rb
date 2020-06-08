@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160720175448) do
     t.integer "user_id"
   end
 
-  create_table "expenses", force: :cascade do |t|
+  create_table "logs", force: :cascade do |t|
     t.string  "description"
     t.float   "amount"
     t.string  "date"

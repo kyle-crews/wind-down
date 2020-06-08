@@ -1,4 +1,4 @@
-<h1 style="color: white; margin: 30px 10px;"><%= @day.name %> expenses are $<%= @day.expenses.collect {|e| e.amount}.sum %></h1>
+<h1 style="color: white; margin: 30px 10px;"><%= @day.name %> logs are $<%= @day.logs.collect {|e| e.amount}.sum %></h1>
 
 <div class="container" >
   <div class="row">
@@ -16,12 +16,12 @@
         <th><h3>Date</h3></th>
         <th><h3></h3></th>
       </tr>
-        <% @day.expenses_sort_by_date.each do |expense| %>
+        <% @day.logs_sort_by_date.each do |log| %>
           <tr style="text-align:left;">
-            <td><%= expense.description %></td>
-            <td>$ <%= expense.amount %></td>
-            <td><%= expense.date %></td>
-            <td><a href="expenses/<%= expense.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><%= log.description %></td>
+            <td>$ <%= log.amount %></td>
+            <td><%= log.date %></td>
+            <td><a href="logs/<%= log.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
           </tr>
         <% end %>
       </table>

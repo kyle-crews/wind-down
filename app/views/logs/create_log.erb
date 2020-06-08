@@ -1,13 +1,13 @@
 <div class="inner-bg">
     <div class="container">
 
-            <div class="row" style="margin-top: -50px">
+            <div class="row" style="margin-top: -20px">
               <div class="col-sm-6 col-sm-offset-3">
 
                 <div class="form-box">
                     <div class="form-top">
                       <div class="form-top-left">
-                        <h3>Edit this Expense</h3>
+                        <h3>Enter a New Log</h3>
                         <% if flash.has?(:message) %>
                           <p style="color:#f0ad4e;"><%= flash[:message] %> </p>
                         <% end %>
@@ -18,47 +18,44 @@
                     </div>
 
                   <div class="form-bottom">
-                    <form role="form" action="/expenses/<%= @expense.id%>" method="post" class="signup-form">
-                      <input id="hidden" type="hidden" name="_method" value="PATCH">
+                    <form  action="/logs" method="post" >
 
                       <div class="form-group">
                         <label class="sr-only" for="form-description">Description</label>
-                        <input type="text" name="description" placeholder="Description..." class="form-description form-control" id="form-description" value="<%= @expense.description%>">
+                        <input type="text" name="description" placeholder="Description..." class="form-username form-control" id="form-description" >
                       </div>
 
                       <div class="form-group">
                         <label class="sr-only" for="form-amount">Amount</label>
-                        <input type="text" name="amount" placeholder="Amount..." class="form-amount form-control" id="form-amount" value="<%= @expense.amount%>">
+                        <input type="text" name="amount" placeholder="Amount..." class="form-amount form-control" id="form-amount">
                       </div>
 
                       <div class="form-group">
                         <label class="sr-only" for="date">Date</label>
-                        <input class="form-date" type="date" name="date" placeholder="YYYY-MM-DD" value="<%= @expense.date%>" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter a day in this formart YYYY-MM-DD"/>
+                        <input class="form-date" type="date" name="date"  placeholder="YYYY-MM-DD" value ="<%= Time.now.strftime('%F') %>" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter a date in this formart YYYY-MM-DD"/>
                       </div>
 
                       <div class="form-group">
                         <label  style="color: white; -webkit-font-smoothing: antialiased !important;" for="day">Day</label>
-                        <select name="day_name">
+                        <select name="day_name" onchange="yesnoCheck(this);">
                               <% current_user.days_sort_by_name.each do |day| %>
-                                <option  name="day_name" <%='selected' if @day.name == day.name %>><%= day.name %></option>
+                                <option  name="day_name"><%= day.name %></option>
                               <%end%>
+                              <option value="new day">Create Day</option>
                         </select>
                       </div>
 
+                      <div class="form-group" id="ifYes" style="display: none;">
+                        <label class="sr-only" for="day">Add New Day</label>
+                        <input type="text" id="create day" placeholder="Add day here..." name="no_name"/>
+                      </div>
 
-                        <button type="submit" class="btn">Update</button>
-                    </form>
-                    <br>
 
-                    <form action="/expenses/<%= @expense.id %>/delete" method="post">
-                        <input type="hidden" id="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger">Delete Expense</button>
+                        <button type="submit" class="btn btn-success">Create Log</button>
                     </form>
 
                   </div>
               </div>
             </div>
-
-
     </div>
 </div>

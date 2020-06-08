@@ -10,13 +10,13 @@ Specs:
 - [x] Include more than one model class (list of model class names e.g. User, Post, Day)
 *3 models classes were included in this project*
 * User
-* Expense
+* Log
 * Day
 
 - [x] Include at least one has_many relationship (x has_many y e.g. User has_many Posts)
 * User has_many :days => days belong_to :user
-* Day has_many :expenses => Expense belong_to :day
-* User has_many :expenses => Expense belong_to :user
+* Day has_many :logs => Log belong_to :day
+* User has_many :logs => Log belong_to :user
 
 - [x] Include user accounts
 * An user model was created and its controller, bcrypt gem was added to the project's gemfile to encrypt its password, sessions were enabled also.

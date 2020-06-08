@@ -1,4 +1,4 @@
-  <h1 style="color: white; margin: 30px 10px;">Expense Days</h1>
+  <h1 style="color: white; margin: 30px 10px;">Log Days</h1>
 
   <div class="container" >
     <div class="row">
@@ -22,7 +22,7 @@
             <% current_user.days_sort_by_name.each do |day| %>
               <tr style="text-align:left;">
                 <td><a href="days/<%= day.id %>"><%= day.name %></a></td>
-                <td><a href="days/<%= day.id %>"><%= day.expenses.size %></a></td>
+                <td><a href="days/<%= day.id %>"><%= day.logs.size %></a></td>
                 <td>$ <%= day.total_amount %></td>
                 <td><a href="days/<%= day.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td><form action="/days/<%= day.id %>/delete" method="post">

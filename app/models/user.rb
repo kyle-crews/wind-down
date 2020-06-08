@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :days, :dependent => :destroy
-  has_many :expenses
+  has_many :logs
 
   def days_sort_by_name
     self.days.all.sort_by {|day| day[:name]}

@@ -1,6 +1,6 @@
 class DaysController < ApplicationController
 
-  # lets user view expense days if logged in
+  # lets user view log days if logged in
   get '/days' do
     if logged_in?
       @days = current_user.days.all
@@ -80,14 +80,14 @@ class DaysController < ApplicationController
     end
   end
 
-  # helper route created to edit expenses when the erb
+  # helper route created to edit logs when the erb
   # file adds '/days' to the edit link
-  get '/days/expenses/:id/edit' do
+  get '/days/logs/:id/edit' do
     if logged_in?
-      @expense = Expense.find(params[:id])
-      @day = Day.find(@expense.day_id)
-      if @expense.user_id == session[:user_id]
-        erb :'expenses/edit_expense'
+      @log = Log.find(params[:id])
+      @day = Day.find(@log.day_id)
+      if @log.user_id == session[:user_id]
+        erb :'logs/edit_log'
       else
         redirect_to_home_page
       end

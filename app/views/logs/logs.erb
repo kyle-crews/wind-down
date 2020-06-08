@@ -17,13 +17,13 @@
         <th><h3>Day</h3></th>
         <th><h3></h3></th>
       </tr>
-        <% current_user.expenses_sort_by_date.each do |expense| %>
+        <% current_user.logs_sort_by_date.each do |log| %>
           <tr style="text-align:left;">
-            <td><a href="expenses/<%= expense.id %>"><%= expense.description %></a></td>
-            <td>$ <%= expense.amount %></td>
-            <td><%= expense.date %></td>
-            <td><a href="days/<%= expense.day.id %>"><%= expense.day.name %></a></td>
-            <td><a href="expenses/<%= expense.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href="logs/<%= log.id %>"><%= log.description %></a></td>
+            <td>$ <%= log.amount %></td>
+            <td><%= log.date %></td>
+            <td><a href="days/<%= log.day.id %>"><%= log.day.name %></a></td>
+            <td><a href="logs/<%= log.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
           </tr>
         <% end %>
       </table>

@@ -1,6 +1,6 @@
-class CreateExpenses < ActiveRecord::Migration
+class CreateLogs < ActiveRecord::Migration
   def change
-    create_table :expenses do |t|
+    create_table :logs do |t|
       t.string  :description
       t.float   :amount
       t.string  :date
