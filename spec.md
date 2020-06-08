@@ -7,15 +7,15 @@ Specs:
 - [x] Use ActiveRecord for storing information in a database:
 * Both ActiveRecord and sqlite3 gems were added to the project's gemfile and its characteristics to models and environment, also the use of migrations to associate models with the database.
 
-- [x] Include more than one model class (list of model class names e.g. User, Post, Category)
+- [x] Include more than one model class (list of model class names e.g. User, Post, Day)
 *3 models classes were included in this project*
 * User
 * Expense
-* Category
+* Day
 
 - [x] Include at least one has_many relationship (x has_many y e.g. User has_many Posts)
-* User has_many :categories => categories belong_to :user
-* Category has_many :expenses => Expense belong_to :category
+* User has_many :days => days belong_to :user
+* Day has_many :expenses => Expense belong_to :day
 * User has_many :expenses => Expense belong_to :user
 
 - [x] Include user accounts

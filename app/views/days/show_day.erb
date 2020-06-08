@@ -1,4 +1,4 @@
-<h1 style="color: white; margin: 30px 10px;"><%= @category.name %> expenses are $<%= @category.expenses.collect {|e| e.amount}.sum %></h1>
+<h1 style="color: white; margin: 30px 10px;"><%= @day.name %> expenses are $<%= @day.expenses.collect {|e| e.amount}.sum %></h1>
 
 <div class="container" >
   <div class="row">
@@ -16,7 +16,7 @@
         <th><h3>Date</h3></th>
         <th><h3></h3></th>
       </tr>
-        <% @category.expenses_sort_by_date.each do |expense| %>
+        <% @day.expenses_sort_by_date.each do |expense| %>
           <tr style="text-align:left;">
             <td><%= expense.description %></td>
             <td>$ <%= expense.amount %></td>

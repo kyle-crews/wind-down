@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many :categories, :dependent => :destroy
+  has_many :days, :dependent => :destroy
   has_many :expenses
 
-  def categories_sort_by_name
-    self.categories.all.sort_by {|category| category[:name]}
+  def days_sort_by_name
+    self.days.all.sort_by {|day| day[:name]}
   end
 
 end

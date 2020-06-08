@@ -36,18 +36,18 @@
                       </div>
 
                       <div class="form-group">
-                        <label  style="color: white; -webkit-font-smoothing: antialiased !important;" for="category">Category</label>
-                        <select name="category_name" onchange="yesnoCheck(this);">
-                              <% current_user.categories_sort_by_name.each do |category| %>
-                                <option  name="category_name"><%= category.name %></option>
+                        <label  style="color: white; -webkit-font-smoothing: antialiased !important;" for="day">Day</label>
+                        <select name="day_name" onchange="yesnoCheck(this);">
+                              <% current_user.days_sort_by_name.each do |day| %>
+                                <option  name="day_name"><%= day.name %></option>
                               <%end%>
-                              <option value="new category">Create Category</option>
+                              <option value="new day">Create Day</option>
                         </select>
                       </div>
 
                       <div class="form-group" id="ifYes" style="display: none;">
-                        <label class="sr-only" for="category">Add New Category</label>
-                        <input type="text" id="create category" placeholder="Add category here..." name="no_name"/>
+                        <label class="sr-only" for="day">Add New Day</label>
+                        <input type="text" id="create day" placeholder="Add day here..." name="no_name"/>
                       </div>
 
 

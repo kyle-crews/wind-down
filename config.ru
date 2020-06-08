@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 use UsersController
-use CategoriesController
+use DaysController
 use ExpensesController
 run ApplicationController

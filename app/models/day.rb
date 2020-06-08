@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Day < ActiveRecord::Base
 
   include Quantifiable::InstanceMethods
 

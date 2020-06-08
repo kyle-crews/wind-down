@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20160720175448) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "days", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
   end
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160720175448) do
     t.string  "description"
     t.float   "amount"
     t.string  "date"
-    t.integer "category_id"
+    t.integer "day_id"
     t.integer "user_id"
   end
 

@@ -21,14 +21,14 @@ class ExpensesController < ApplicationController
 
   # does not let a user create a blank expense
   post '/expenses' do
-    if params[:description].empty? || params[:amount].empty? || params[:date].empty? || params[:category_name].empty?
+    if params[:description].empty? || params[:amount].empty? || params[:date].empty? || params[:day_name].empty?
       flash[:message] = "Please don't leave blank content"
       redirect to "/expenses/new"
     else
       @user = current_user
-      @category = @user.categories.find_or_create_by(name:params[:category_name])
-      @category.user_id = @user.id
-      @expense = Expense.create(description:params[:description], amount:params[:amount], date:params[:date], category_id:@category.id, user_id:@user.id)
+      @day = @user.days.find_or_create_by(name:params[:day_name])
+      @day.user_id = @user.id
+      @expense = Expense.create(description:params[:description], amount:params[:amount], date:params[:date], day_id:@day.id, user_id:@user.id)
       redirect to "/expenses/#{@expense.id}"
     end
   end
@@ -48,7 +48,7 @@ class ExpensesController < ApplicationController
   get '/expenses/:id/edit' do
     if logged_in?
       @expense = Expense.find(params[:id])
-      @category = Category.find(@expense.category_id)
+      @day = Day.find(@expense.day_id)
       if @expense.user_id == current_user.id
         erb :'expenses/edit_expense'
       else
@@ -64,8 +64,8 @@ class ExpensesController < ApplicationController
     if !params[:description].empty? && !params[:amount].empty? && !params[:date].empty?
       @expense = Expense.find(params[:id])
       @expense.update(description:params[:description], amount:params[:amount], date:params[:date])
-      @category = current_user.categories.find_by(name:params[:category_name])
-      @expense.category_id = @category.id
+      @day = current_user.days.find_by(name:params[:day_name])
+      @expense.day_id = @day.id
       @expense.save
       flash[:message] = "Your Expense Has Been Succesfully Updated"
       redirect_to_home_page
