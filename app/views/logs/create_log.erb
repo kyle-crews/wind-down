@@ -32,7 +32,7 @@
 
                       <div class="form-group">
                         <label class="sr-only" for="form-date">FIRST TASK to complete tomorrow:</label>
-                        <input class="form-date" type="text" name="date"  placeholder="FIRST TASK to complete tomorrow .." value ="<%= Time.now.strftime('%F') %>" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="Enter a date in this formart YYYY-MM-DD"/>
+                        <input class="form-date" type="text" name="date"  placeholder="FIRST TASK to complete tomorrow ..">
                       </div>
 
                       <div class="form-group">
@@ -42,7 +42,7 @@
                               <% current_user.days_sort_by_name.each do |day| %>
                                 <option  name="day_name"><%= day.name %></option>
                               <%end%>
-                              <option value="new day">Create Day</option>
+                              <option value="new day">add a new Day</option>
                         </select>
                       </div>
 

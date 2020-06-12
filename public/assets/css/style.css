@@ -14,6 +14,7 @@ body {
 
 strong {
 	font-weight: 500;
+	color: #0248A2;
 }
 
 a, a:hover, a:focus {
@@ -263,7 +264,8 @@ tr.info h3 {
 
 /***** Footer *****/
 footer {
-	color: #FFF;
+	color: #04050C;
+	font-weight: 300;
 }
 
 footer .footer-border {
@@ -276,6 +278,9 @@ footer .footer-border {
 
 footer p {
 	opacity: 0.8;
+	background-color: rgba(253, 253, 253, 0.632);
+	margin-right: 220px;
+	margin-left: 220px;
 }
 
 footer a {
