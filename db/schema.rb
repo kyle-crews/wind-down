@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160720175448) do
 
   create_table "logs", force: :cascade do |t|
     t.string  "description"
-    t.float   "amount"
+    t.string  "amount"
     t.string  "date"
     t.integer "day_id"
     t.integer "user_id"

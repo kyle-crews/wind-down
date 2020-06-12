@@ -1,14 +1,14 @@
   <div class="container receipt" style="width:400px;">
     <div class="row">
       <div class="jumbotron" style="background: white; border-radius:20px;">
-        <h2>Log Receipt</h2>
-        <h3>Description</h3>
+        <h2>Today's <strong>// LOG //</strong></h2>
+        <h3>GOOD(today)</h3>
         <p ><%= @log.description %></p>
-        <h3>Amount</h3>
-        <p ><strong>$ </strong><%= @log.amount %></p>
-        <h3>Date</h3>
+        <h3>ACCOMPLISHED(today)</h3>
+        <p ><strong></strong><%= @log.amount %></p>
+        <h3>FIRST TASK(tomorrow)</h3>
         <p ><%= @log.date %></p>
-        <h3>Date</h3>
+        <h3>Day</h3>
         <p ><%= @log.day.name %></p>
         <a href="/logs/<%= @log.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Log </a>
         <hr>
