@@ -9,24 +9,32 @@
           <p><%= flash[:message] %> </p>
       </div>
       <% end %>
-      <table class="table table-hover table-striped" >
-      <tr class="info">
-        <th><h3>GOOD(today)</h3></th>
-        <th><h3>ACCOMPLISHED(today)</h3></th>
-        <th><h3>FIRST TASK(tomorrow)</h3></th>
-        <th><h3>Day</h3></th>
-        <th><h3></h3></th>
-      </tr>
         <% current_user.logs_sort_by_date.each do |log| %>
           <tr style="text-align:left;">
+            <td><strong><%= log.day.name %></strong></td>
+            <td><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <h3>GOOD that happened</h3>
             <td><a href="logs/<%= log.id %>"><%= log.description %></a></td>
-            <td>$ <%= log.amount %></td>
+            <h3>ACCOMPLISHED</h3>
+            <td><%= log.amount %></td>
+            <h3>FIRST TASK in the morning</h3>
             <td><%= log.date %></td>
-            <td><a href="days/<%= log.day.id %>"><%= log.day.name %></a></td>
-            <td><a href="logs/<%= log.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <p> </p>
+            <p>__________________________________________________</p>
           </tr>
         <% end %>
       </table>
     </div><!-- end well -->
   </div><!-- end row -->
 </div><!-- end container -->
+
+<!-- // DISPLAY AS TABLE //      
+
+    <table class="table table-hover table-striped" >
+      <tr class="info">
+        <th><h3>GOOD that happened</h3></th>
+        <th><h3>ACCOMPLISHED</h3></th>
+        <th><h3>FIRST TASK in the morning</h3></th>
+        <th><h3>Day</h3></th>
+      </tr> 
+  -->
