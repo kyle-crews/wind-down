@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160720175448) do
 
   create_table "logs", force: :cascade do |t|
     t.string  "good"
-    t.string  "amount"
+    t.string  "accomplishment"
     t.string  "date"
     t.integer "day_id"
     t.integer "user_id"

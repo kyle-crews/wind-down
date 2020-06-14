@@ -21,14 +21,14 @@ class LogsController < ApplicationController
 
   # does not let a user create a blank log
   post '/logs' do
-    if params[:good].empty? || params[:amount].empty? || params[:date].empty? || params[:day_name].empty?
+    if params[:good].empty? || params[:accomplishment].empty? || params[:date].empty? || params[:day_name].empty?
       flash[:message] = "Please don't leave blank content"
       redirect to "/logs/new"
     else
       @user = current_user
       @day = @user.days.find_or_create_by(name:params[:day_name])
       @day.user_id = @user.id
-      @log = Log.create(good:params[:good], amount:params[:amount], date:params[:date], day_id:@day.id, user_id:@user.id)
+      @log = Log.create(good:params[:good], accomplishment:params[:accomplishment], date:params[:date], day_id:@day.id, user_id:@user.id)
       redirect to "/logs/#{@log.id}"
     end
   end
@@ -61,9 +61,9 @@ class LogsController < ApplicationController
 
   # does not let a user edit a text with blank content
   patch '/logs/:id' do
-    if !params[:good].empty? && !params[:amount].empty? && !params[:date].empty?
+    if !params[:good].empty? && !params[:accomplishment].empty? && !params[:date].empty?
       @log = Log.find(params[:id])
-      @log.update(good:params[:good], amount:params[:amount], date:params[:date])
+      @log.update(good:params[:good], accomplishment:params[:accomplishment], date:params[:date])
       @day = current_user.days.find_by(name:params[:day_name])
       @log.day_id = @day.id
       @log.save

@@ -2,8 +2,8 @@ class Quantifiable
 
   module InstanceMethods
 
-    def total_amount
-      self.logs.collect {|log| log.amount}.sum
+    def total_accomplishment
+      self.logs.collect {|log| log.accomplishment}.sum
     end
 
     def logs_sort_by_date
