@@ -11,7 +11,7 @@
       <% end %>
         <% current_user.logs_sort_by_date.each do |log| %>
           <tr style="text-align:left;">
-            <td><strong><%= log.day.name %></strong></td>
+            <td><h2><strong><%= log.day.name %></strong></h2></td>
             <td><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
             <h3><strong>GOOD</strong> that happened</h3>
             <td><a href="logs/<%= log.id %>"><%= log.description %></a></td>
