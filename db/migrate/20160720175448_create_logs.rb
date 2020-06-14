@@ -1,7 +1,7 @@
 class CreateLogs < ActiveRecord::Migration
   def change
     create_table :logs do |t|
-      t.string  :description
+      t.string  :good
       t.string  :amount
       t.string  :date
       t.integer :day_id

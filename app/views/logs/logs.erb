@@ -14,8 +14,9 @@
             <a href="logs/<%= log.id %>"><h2><strong><%= log.day.name %></strong></h2></a>
             <hr>
             <h4><strong><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></strong></h4>
+            <p>__________________________________________________</p>
             <h3><strong>GOOD</strong> that happened</h3>
-            <%= log.description %>
+            <%= log.good %>
             <h3><strong>ACCOMPLISHED</strong> today</h3>
             <%= log.amount %>
             <h3><strong>FIRST TASK</strong> in the morning</h3>

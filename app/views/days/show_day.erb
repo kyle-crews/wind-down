@@ -18,7 +18,7 @@
       </tr>
         <% @day.logs_sort_by_date.each do |log| %>
           <tr style="text-align:left;">
-            <td><%= log.description %></td>
+            <td><%= log.good %></td>
             <td>$ <%= log.amount %></td>
             <td><%= log.date %></td>
             <td><a href="logs/<%= log.id %>/edit">Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
