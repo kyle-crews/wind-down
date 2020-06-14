@@ -10,15 +10,16 @@
       </div>
       <% end %>
         <% current_user.logs_sort_by_date.each do |log| %>
-          <tr style="text-align:left;">
-            <td><h2><strong><%= log.day.name %></strong></h2></td>
-            <td><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></td>
+            <hr>
+            <h2><strong><%= log.day.name %></strong></h2>
+            <hr>
+            <h4><strong><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></strong></h4>
             <h3><strong>GOOD</strong> that happened</h3>
-            <td><a href="logs/<%= log.id %>"><%= log.description %></a></td>
+            <a href="logs/<%= log.id %>"><%= log.description %></a>
             <h3><strong>ACCOMPLISHED</strong> today</h3>
-            <td><%= log.amount %></td>
+            <%= log.amount %>
             <h3><strong>FIRST TASK</strong> in the morning</h3>
-            <td><%= log.date %></td>
+            <%= log.date %>
             <p> </p>
             <p>__________________________________________________</p>
           </tr>
