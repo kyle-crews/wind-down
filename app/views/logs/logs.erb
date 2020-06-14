@@ -11,11 +11,11 @@
       <% end %>
         <% current_user.logs_sort_by_date.each do |log| %>
             <hr>
-            <h2><strong><%= log.day.name %></strong></h2>
+            <a href="logs/<%= log.id %>"><h2><strong><%= log.day.name %></strong></h2></a>
             <hr>
             <h4><strong><a href="logs/<%= log.id %>/edit"> // Edit <span class="glyphicon glyphicon-pencil"></span></a></strong></h4>
             <h3><strong>GOOD</strong> that happened</h3>
-            <a href="logs/<%= log.id %>"><%= log.description %></a>
+            <%= log.description %>
             <h3><strong>ACCOMPLISHED</strong> today</h3>
             <%= log.amount %>
             <h3><strong>FIRST TASK</strong> in the morning</h3>
@@ -28,14 +28,3 @@
     </div><!-- end well -->
   </div><!-- end row -->
 </div><!-- end container -->
-
-<!-- // DISPLAY AS TABLE //      
-
-    <table class="table table-hover table-striped" >
-      <tr class="info">
-        <th><h3>GOOD that happened</h3></th>
-        <th><h3>ACCOMPLISHED</h3></th>
-        <th><h3>FIRST TASK in the morning</h3></th>
-        <th><h3>Day</h3></th>
-      </tr> 
-  -->

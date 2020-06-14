@@ -3,6 +3,8 @@
       <div class="jumbotron" style="background: white; border-radius:20px;">
         <h2><strong>// LOG //</strong></h2>
         <p>_______________________________</p>
+        <h3><strong><%= @log.day.name %></strong></h3>
+        <hr>
         <h3>GOOD that happened</h3><br>
         <p ><%= @log.description %></p>
         <hr>
@@ -11,9 +13,6 @@
         <hr>
         <h3>FIRST TASK for tomorrow</h3><br>
         <p ><%= @log.date %></p>
-        <hr>
-        <h3>Day</h3><br>
-        <p ><%= @log.day.name %></p>
         <hr>
         <a href="/logs/<%= @log.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Log </a>
         <hr>
